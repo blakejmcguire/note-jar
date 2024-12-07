@@ -17,6 +17,9 @@ const path = require('path')
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+
+
+
 /**
 const { auth } = require('express-openid-connect')
 const { requiresAuth } = require('express-openid-connect');

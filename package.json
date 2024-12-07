@@ -4,12 +4,14 @@
   "description": "A simple app for storing and retrieving notes, great for movies, date night ideas, etc.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
   },
   "author": "Blake McGuire",
   "license": "ISC",
   "devDependencies": {
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "nodemon": "^3.1.7"
   },
   "dependencies": {
     "express": "^4.21.2",
