@@ -1,9 +1,7 @@
-
-
 const express = require('express')
 const app = new express()
 
-const helmet = require('helmet')
+/* const helmet = require('helmet')
 app.use(helmet({
     contentSecurityPolicy: {
         directives: {
@@ -11,14 +9,14 @@ app.use(helmet({
                 ["'self'", 'code.jquery.com', 'cdn.jsdelivr.net']
         }
     }
-}))
+})) */
 
 const path = require('path')
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-
+app.use('/api', require('./api.js'))
 
 /**
 const { auth } = require('express-openid-connect')
