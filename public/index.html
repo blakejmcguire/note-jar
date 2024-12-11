@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<head></head>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("form").submit(function (event) {
+                event.preventDefault();
+                fetch('/api/note/new', {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({content: $('note').val()})
+                })
+            });
+        });
+    </script>
+</head>
+
 <body>
     <p>Hello</p>
 
     <div>
         <form>
-            <label for="title">Title</label><br>
-            <input type="text" id="title" name="title"><br>
-            <label for="content">Content</label><br>
-            <input type="text" id="content" name="content"><br>
+            <label for="note">New Note</label><br>
+            <input type="text" id="note" name="note"><br>
             <input type="submit">
         </form>
     </div>
