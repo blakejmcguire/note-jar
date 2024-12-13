@@ -1,7 +1,8 @@
 const express = require('express')
 const router = new express.Router()
 
-router.post('/new', (req, res) => {
+router.post('/note/new', (req, res) => {
+    console.log('test')
     console.log(req.body)
     res.sendStatus(200)
 })
